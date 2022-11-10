@@ -539,8 +539,7 @@ function start_vm(user, pwd)
 
     params = get_params();
     cpu = params["cpu"] || "x86";
-    url = params["url"];
-    url = get_absolute_url(url);
+    url = "https://yoazmenda.github.io/YoazOS" //get_absolute_url(url);
     mem_size = (params["mem"] | 0) || 128; /* in mb */
     cmdline = params["cmdline"] || "";
     cols = (params["cols"] | 0) || 80;
