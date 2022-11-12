@@ -1,19 +1,12 @@
 [org 0x7c00]
 
-mov ah , 0x0e ; int 10/ ah = 0eh -> scrolling teletype BIOS routine
+mov bp, 0x8000
+mov sp, bp
 
-mov cx, 0x0000
-loop_print_welcome:
-    mov bx, welcome_string
-    add bx, cx
-    mov al, [bx]
-    cmp al, 0x00,
-    je  loop_end
-    int 0x10
-    add cx, 0x0001
-    jmp loop_print_welcome
+%include 'print.asm'
 
-loop_end:
+mov ax, welcome_string
+call print_str
 
 jmp $ ; Jump to the current address ( i.e. forever ).
 ;
@@ -22,7 +15,7 @@ jmp $ ; Jump to the current address ( i.e. forever ).
 
 
 welcome_string:
-    db 'Welcometo Yoaz OS'
+    db 'Welcometo Yoaz OS', 0 
 
 
 times 510 -( $ - $$ ) db 0 ; Pad the boot sector out with zeros
