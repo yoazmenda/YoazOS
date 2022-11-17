@@ -3,7 +3,7 @@ print_str:
     pusha
     mov bx, ax ; ax will be needed or int10
     mov ah , 0x0e ; int 10/ ah = 0eh -> scrolling teletype BIOS routine
-loop:    
+loop: 
     mov cx, [bx]
     cmp cl, 0x0
     je loop_end
