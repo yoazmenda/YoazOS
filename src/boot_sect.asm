@@ -3,7 +3,7 @@
 mov bp, 0x8000
 mov sp, bp
 
-mov ax, welcome_string
+mov ax, welcome_msg
 call print_str
 
 jmp $ ; Jump to the current address ( i.e. forever ).
@@ -12,7 +12,7 @@ jmp $ ; Jump to the current address ( i.e. forever ).
 ;
 
 
-welcome_string:
+welcome_msg:
     db 'Welcome to Yoaz OS', 0 
 
 %include 'print.asm'
