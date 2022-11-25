@@ -1,0 +1,8 @@
+/* VM configuration file */
+{
+    version: 1,
+    machine: "pc",
+    memory_size: 256,
+    kernel: "out/boot_sect.bin",
+    eth0: { driver: "user" },
+}
