@@ -20,3 +20,5 @@ welcome_msg:
 times 510 -( $ - $$ ) db 0 ; Pad the boot sector out with zeros
 dw 0xaa55 ; Last two bytes form the magic number ,
 ; so BIOS knows we are a boot sector.
+
+times 2048 db 0
